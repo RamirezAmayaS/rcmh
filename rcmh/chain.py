@@ -7,3 +7,6 @@ class Chain:
     def step():
         if self.type == 'poisson':
             pass
+
+    def walk(length):
+        pass
