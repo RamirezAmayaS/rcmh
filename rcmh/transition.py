@@ -1,5 +1,6 @@
 import math
 import scipy
+from rcmh import config
 
 def count_partitions(n,d,k):
     nCd =  math.factorial(n)/(math.factorial(d)*math.factorial(n-d))
@@ -21,5 +22,8 @@ def get_poisson_transition_prob(n,d,k,j):
 def get_alpha(loss_actual,loss_candidate,t):
     pi_actual = math.exp(-1*loss_actual/t)
     pi_candidate = math.exp(-1*loss_candidate/t)
-    alpha = pi_candidate/pi_actual
-    return alpha 
+    alpha = min(1,pi_candidate/pi_actual)
+    return alpha
+
+def get_loss(group):
+    pass

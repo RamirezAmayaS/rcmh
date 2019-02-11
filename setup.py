@@ -10,7 +10,9 @@ setup(
         'rcmh'
     ],
     install_requires = [
-        'pandas'
+        'pandas',
+        'numpy',
+        'scipy'
     ],
     include_package_data = True,
     package_data = {

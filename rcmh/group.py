@@ -13,7 +13,7 @@ class Group:
             grouping[code] = random.choice(groups)
         return grouping
 
-    def reasign(n):
+    def reassign(n):
         keys = random.sample(self.grouping.keys(),n)
         for key in keys:
             candidate_group = random.choice(groups)
