@@ -12,7 +12,8 @@ setup(
     install_requires = [
         'pandas',
         'numpy',
-        'scipy'
+        'scipy',
+        'sklearn'
     ],
     include_package_data = True,
     package_data = {

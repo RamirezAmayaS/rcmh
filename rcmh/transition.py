@@ -2,6 +2,8 @@ import math
 import scipy
 import pandas as pd
 from rcmh import config
+from sklearn import linear_model
+from sklearn.metrics import mean_absolute_error
 
 def count_partitions(n,d,k):
     nCd =  math.factorial(n)/(math.factorial(d)*math.factorial(n-d))

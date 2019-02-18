@@ -7,7 +7,7 @@ class Group:
         self.groups = groups
         self.grouping = self.random_grouping(codes,groups)
 
-    def random_grouping(codes,groups):
+    def random_grouping(self,codes,groups):
         grouping = {}
         for code in codes:
             grouping[code] = random.choice(groups)
