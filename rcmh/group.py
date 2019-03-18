@@ -2,10 +2,13 @@ import random
 
 class Group:
 
-    def __init__(self,codes,groups):
+    def __init__(self,codes,groups,grouping):
         self.codes = codes
         self.groups = groups
-        self.grouping = self.random_grouping(codes,groups)
+        if grouping == None:
+            self.grouping = self.random_grouping(codes,groups)
+        else:
+            self.grouping = grouping
 
     def random_grouping(self,codes,groups):
         grouping = {}
@@ -13,10 +16,12 @@ class Group:
             grouping[code] = random.choice(groups)
         return grouping
 
-    def reassign(n):
+    def reassign(self,n):
+        grouping = self.grouping
         keys = random.sample(self.grouping.keys(),n)
         for key in keys:
-            candidate_group = random.choice(groups)
-            while candidate_group == self.grouping[key]:
-                candidate_group = random.choice(groups)
-            self.grouping[key] = candidate_group
+            candidate_group = random.choice(self.groups)
+            while candidate_group == grouping[key]:
+                candidate_group = random.choice(self.groups)
+            grouping[key] = candidate_group
+        return grouping

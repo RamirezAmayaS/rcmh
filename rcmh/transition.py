@@ -34,7 +34,7 @@ def get_loss(group):
     regr = linear_model.LinearRegression()
     regr.fit(train_sample_x,train_sample_y)
     test_hat_y = regr.predict(test_sample_x)
-    mae = -1*mean_absolute_error(test_hat_y,test_sample_y)
+    mae = mean_absolute_error(test_hat_y,test_sample_y)
     return mae
 
 def get_features_from_diag(sample,group):
@@ -44,7 +44,7 @@ def get_features_from_diag(sample,group):
     return df
 
 def get_sample(group):
-    sample = config.diag_csv.sample(1*10^5))
+    sample = config.diag_csv.sample(config.sample_size)
     sample_x = pd.concat([sample[config.feature_columns],get_features_from_diag(sample,group)],axis=1)
     sample_y = sample[config.target_columns]
     return sample_x,sample_y
