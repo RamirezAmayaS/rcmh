@@ -1,4 +1,5 @@
 import random
+import copy
 
 class Group:
 
@@ -17,7 +18,7 @@ class Group:
         return grouping
 
     def reassign(self,n):
-        grouping = self.grouping
+        grouping = copy.deepcopy(self.grouping)
         keys = random.sample(self.grouping.keys(),n)
         for key in keys:
             candidate_group = random.choice(self.groups)
